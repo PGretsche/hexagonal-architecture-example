@@ -1,0 +1,17 @@
+version: "3.8"
+
+networks:
+  testNet:
+
+services:
+  db:
+    image: postgres
+    container_name: hexadb
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "SomeRandomPassword"
+      POSTGRES_DB: "hexadb"
+    ports:
+      - "5432:5432"
+    networks:
+      - testNet
